@@ -1,14 +1,12 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function sortObjectKeysDeep(value) {
-  if (Array.isArray(value)) {
-    return value.map(sortObjectKeysDeep);
-  }
+  if (Array.isArray(value)) return value.map(sortObjectKeysDeep);
   if (value && typeof value === "object") {
     return Object.keys(value)
       .sort((a, b) => a.localeCompare(b))
-      .reduce((acc, key) => {
-        acc[key] = sortObjectKeysDeep(value[key]);
+      .reduce((acc, k) => {
+        acc[k] = sortObjectKeysDeep(value[k]);
         return acc;
       }, {});
   }
@@ -82,7 +80,7 @@ export default function JsonFormatter() {
     setError("");
   };
 
-  // Keyboard shortcuts
+  // Atajos de teclado
   useEffect(() => {
     const onKeyDown = (e) => {
       const isMeta = e.metaKey || e.ctrlKey;
@@ -90,7 +88,7 @@ export default function JsonFormatter() {
         e.preventDefault();
         formatJson();
       }
-      if (isMeta && (e.key.toLowerCase() === "b")) {
+      if (isMeta && e.key.toLowerCase() === "b") {
         e.preventDefault();
         minifyJson();
       }
@@ -102,20 +100,31 @@ export default function JsonFormatter() {
 
   return (
     <>
-      <div className="relative z-0 space-y-4">
+      <title>JSON Formatter — Toolsy</title>
+      <meta
+        name="description"
+        content="Formatea, valida y minifica JSON al instante. Ordena claves, copia y descarga el resultado."
+      />
+      <link rel="canonical" href="https://toolsykit.vercel.app/json-formatter" />
+
+      <div className="relative z-0 space-y-6">
         <div className="space-y-1">
-          <h1 className="text-xl font-semibold">JSON Formatter</h1>
-          <p className="text-sm text-neutral-600">
-              Pega tu JSON y formatealo o minifícalo. Atajos: <kbd>Ctrl/⌘ + Enter</kbd>, <kbd>Ctrl/⌘ + B</kbd>.
+          <h1 className="text-3xl font-bold">JSON Formatter</h1>
+          <p className="muted">
+            Pega tu JSON y formatealo o minifícalo. Atajos:{" "}
+            <kbd>Ctrl/⌘ + Enter</kbd> (Formatear), <kbd>Ctrl/⌘ + B</kbd> (Minificar).
           </p>
         </div>
 
+        {/* Controles */}
         <div className="flex flex-wrap items-center gap-3">
           <div className="flex items-center gap-2">
-            <label htmlFor="indent" className="text-sm">Indentación</label>
+            <label htmlFor="indent" className="label">
+              Indentación
+            </label>
             <select
               id="indent"
-              className="rounded border bg-white px-2 py-1 text-sm"
+              className="input h-9 w-auto px-2 py-1"
               value={indent}
               onChange={(e) => setIndent(Number(e.target.value))}
             >
@@ -135,26 +144,21 @@ export default function JsonFormatter() {
           </label>
 
           <div className="flex flex-wrap gap-2">
-            <button
-              onClick={formatJson}
-              className="rounded bg-black px-3 py-2 text-sm text-white"
-            >
+            <button onClick={formatJson} className="btn-primary">
               Formatear
             </button>
-            <button
-              onClick={minifyJson}
-              className="rounded bg-neutral-800 px-3 py-2 text-sm text-white"
-            >
+            <button onClick={minifyJson} className="btn-outline">
               Minificar
             </button>
-            <button onClick={clearAll} className="rounded border px-3 py-2 text-sm">
+            <button onClick={clearAll} className="btn-ghost">
               Limpiar
             </button>
           </div>
         </div>
 
+        {/* Entrada */}
         <div className="space-y-2">
-          <label htmlFor="input" className="text-sm font-medium">
+          <label htmlFor="input" className="label">
             Entrada (JSON)
           </label>
           <textarea
@@ -163,15 +167,12 @@ export default function JsonFormatter() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder='{"name":"Ada","age":27,"skills":["math","code"]}'
-            className="h-48 w-full rounded-lg border p-3 font-mono text-sm outline-none focus:ring-2 focus:ring-neutral-300"
+            className="textarea focus:ring-brand/30"
             aria-invalid={!!error}
             aria-describedby={error ? "json-error" : undefined}
           />
           <div className="flex gap-2">
-            <button
-              onClick={pasteToInput}
-              className="rounded border px-3 py-2 text-sm"
-            >
+            <button onClick={pasteToInput} className="btn-outline">
               Pegar del portapapeles
             </button>
           </div>
@@ -186,8 +187,9 @@ export default function JsonFormatter() {
           )}
         </div>
 
+        {/* Resultado */}
         <div className="space-y-2">
-          <label htmlFor="output" className="text-sm font-medium">
+          <label htmlFor="output" className="label">
             Resultado
           </label>
           <textarea
@@ -196,32 +198,40 @@ export default function JsonFormatter() {
             value={output}
             readOnly
             placeholder="Aquí verás el resultado…"
-            className="h-48 w-full rounded-lg border bg-neutral-50 p-3 font-mono text-sm"
+            className="textarea bg-neutral-50"
           />
           <div className="flex flex-wrap gap-2">
             <button
               onClick={copyOutput}
+              className={`btn-outline ${!output ? "btn-disabled" : ""}`}
               disabled={!output}
-              className="rounded border px-3 py-2 text-sm disabled:opacity-50"
             >
               Copiar resultado
             </button>
             <button
               onClick={downloadOutput}
+              className={`btn-outline ${!output ? "btn-disabled" : ""}`}
               disabled={!output}
-              className="rounded border px-3 py-2 text-sm disabled:opacity-50"
             >
               Descargar .json
             </button>
           </div>
         </div>
 
-        <aside className="rounded-lg border bg-white p-3 text-sm text-neutral-700">
+        <aside className="card p-3 text-sm text-neutral-700">
           <p className="mb-1 font-medium">Consejos:</p>
           <ul className="list-disc pl-5 space-y-1">
-            <li>Usa <kbd>Ctrl/⌘ + Enter</kbd> para formatear rápido.</li>
-            <li>Activa <strong>Ordenar claves</strong> para tener objetos con orden consistente.</li>
-            <li>Para archivos muy grandes, pega por partes o usa la futura herramienta CSV↔JSON.</li>
+            <li>
+              Usa <kbd>Ctrl/⌘ + Enter</kbd> para formatear rápido.
+            </li>
+            <li>
+              Activa <strong>Ordenar claves</strong> para tener objetos con orden
+              consistente.
+            </li>
+            <li>
+              Para archivos muy grandes, pega por partes o usa la futura herramienta
+              CSV↔JSON.
+            </li>
           </ul>
         </aside>
       </div>

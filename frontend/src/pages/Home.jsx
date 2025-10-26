@@ -8,19 +8,19 @@ export default function Home() {
 
   return (
     <>
-      <title>Toolsy — Utilidades Online</title>
-      <meta name="description" content="Colección de pequeñas utilidades online para developers y público general." />
+      <title>Toolsy — Online Utilities</title>
+      <meta name="description" content="Small, fast, privacy-friendly online utilities for developers and everyone." />
       <link rel="canonical" href="https://toolsykit.vercel.app/" />
 
       <div className="space-y-6">
-        <h1 className="text-2xl font-semibold">Toolsy</h1>
-        <p className="text-neutral-700">Herramientas online rápidas y sencillas para el día a día.</p>
+        <h1 className="text-3xl font-bold">Toolsy</h1>
+        <p className="muted">Herramientas online rápidas y sencillas para el día a día.</p>
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-2">
           {tools.map((t) => (
-            <Link key={t.path} to={t.path} className="block rounded-xl border bg-white p-4 hover:shadow-sm">
-              <h2 className="font-medium">{t.title}</h2>
-              <p className="text-sm text-neutral-600">{t.desc}</p>
+            <Link key={t.path} to={t.path} className="card card-hover block p-4">
+              <h2 className="font-semibold"> {t.title} </h2>
+              <p className="muted mt-1">{t.desc}</p>
             </Link>
           ))}
         </div>

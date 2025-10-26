@@ -1,5 +1,63 @@
 @import "tailwindcss";
 
+/* Tailwind v4: define custom design tokens (colores, etc.) */
+@theme {
+  --color-brand: #084003;
+  --color-brand-50: #e9f5ec;
+  --color-brand-100: #d4ebd9;
+  --color-brand-200: #a9d7b4;
+  --color-brand-300: #7fc38e;
+  --color-brand-400: #54af69;
+  --color-brand-500: #2a9b44;
+  --color-brand-600: #1c6a2e;
+  --color-brand-700: #145023;
+  --color-brand-800: #0d3718;
+  --color-brand-900: #084003;
+}
+
 @layer base {
   :root { color-scheme: light; }
+  html {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+      "Segoe UI Emoji";
+  }
+}
+
+@layer components {
+  /* Layout container centrado */
+  .container-site { @apply mx-auto w-full max-w-5xl px-4; }
+
+  /* Botones */
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm font-medium transition duration-150;
+    @apply bg-brand text-white hover:bg-brand/90 shadow-sm;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm font-medium transition duration-150;
+    @apply border border-neutral-300 bg-white hover:bg-neutral-50;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm font-medium transition duration-150;
+    @apply hover:bg-neutral-100;
+  }
+  .btn-disabled { @apply opacity-50 pointer-events-none; }
+
+  /* Tarjetas */
+  .card { @apply rounded-xl border border-neutral-200 bg-white shadow-sm; }
+  .card-hover { @apply transition hover:shadow-md hover:border-neutral-300; }
+
+  /* Formularios */
+  .input {
+    @apply w-full rounded-lg border border-neutral-300 bg-white p-3 text-sm
+           outline-none focus:ring-2 focus:ring-brand/30;
+  }
+  .textarea {
+    @apply w-full rounded-lg border border-neutral-300 bg-white p-3 text-sm
+           outline-none focus:ring-2 focus:ring-brand/30 h-48 font-mono;
+  }
+
+  /* Texto auxiliar */
+  .label { @apply text-sm font-medium; }
+  .muted { @apply text-sm text-neutral-600; }
 }
