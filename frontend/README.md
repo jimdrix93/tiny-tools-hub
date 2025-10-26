@@ -1,6 +1,6 @@
-# React + Vite — Tiny Tools Hub (Frontend)
+# React + Vite — Toolsy (Frontend)
 
-This is the **frontend** of Tiny Tools Hub, built with **React 19 + Vite + Tailwind CSS v4**.
+This is the **frontend** of Toolsy, built with **React 19 + Vite + Tailwind CSS v4**.
 
 ---
 
@@ -44,7 +44,7 @@ Open the URL shown by Vite (usually [http://localhost:5173](http://localhost:517
 ---
 
 ## 📜 License
-MIT © 2025 Tiny Tools Hub
+MIT © 2025 Toolsy
 
 ---
 

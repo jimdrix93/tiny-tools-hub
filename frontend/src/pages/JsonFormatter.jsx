@@ -25,22 +25,6 @@ export default function JsonFormatter() {
   const inputRef = useRef(null);
   const outputRef = useRef(null);
 
-  // Metadatos nativos (React 19)
-  // Cambia el canonical cuando tengas dominio
-  // const meta = useMemo(
-  //   () => (
-  //     <>
-  //       <title>JSON Formatter Online — Tiny Tools Hub</title>
-  //       <meta
-  //         name="description"
-  //         content="Formatea, valida y minifica JSON al instante. Copia, descarga y configura la indentación fácilmente."
-  //       />
-  //       <link rel="canonical" href="https://tudominio.com/json-formatter" />
-  //     </>
-  //   ),
-  //   []
-  // );
-
   const formatJson = () => {
     setError("");
     try {
@@ -98,7 +82,7 @@ export default function JsonFormatter() {
     setError("");
   };
 
-  // Atajos de teclado
+  // Keyboard shortcuts
   useEffect(() => {
     const onKeyDown = (e) => {
       const isMeta = e.metaKey || e.ctrlKey;
@@ -118,7 +102,6 @@ export default function JsonFormatter() {
 
   return (
     <>
-      {/* {meta} */}
       <div className="relative z-0 space-y-4">
         <div className="space-y-1">
           <h1 className="text-xl font-semibold">JSON Formatter</h1>
@@ -127,7 +110,6 @@ export default function JsonFormatter() {
           </p>
         </div>
 
-        {/* Controles */}
         <div className="flex flex-wrap items-center gap-3">
           <div className="flex items-center gap-2">
             <label htmlFor="indent" className="text-sm">Indentación</label>
@@ -171,7 +153,6 @@ export default function JsonFormatter() {
           </div>
         </div>
 
-        {/* Área de entrada */}
         <div className="space-y-2">
           <label htmlFor="input" className="text-sm font-medium">
             Entrada (JSON)
@@ -205,7 +186,6 @@ export default function JsonFormatter() {
           )}
         </div>
 
-        {/* Resultado */}
         <div className="space-y-2">
           <label htmlFor="output" className="text-sm font-medium">
             Resultado
@@ -236,7 +216,6 @@ export default function JsonFormatter() {
           </div>
         </div>
 
-        {/* Consejos de uso */}
         <aside className="rounded-lg border bg-white p-3 text-sm text-neutral-700">
           <p className="mb-1 font-medium">Consejos:</p>
           <ul className="list-disc pl-5 space-y-1">

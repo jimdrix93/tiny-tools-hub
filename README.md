@@ -1,4 +1,4 @@
-# 🧰 Tiny Tools Hub
+# 🧰 Toolsy
 
 Small and fast online utilities built with **React** and **Tailwind CSS**.
 
@@ -14,4 +14,4 @@ Small and fast online utilities built with **React** and **Tailwind CSS**.
 
 ---
 
-© 2025 Tiny Tools Hub
+© 2025 Toolsy

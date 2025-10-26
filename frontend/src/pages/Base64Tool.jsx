@@ -35,7 +35,7 @@ export default function Base64Tool() {
 
   return (
     <>
-      <title>Base64 Encode / Decode — Tiny Tools Hub</title>
+      <title>Base64 Encode / Decode — Toolsy</title>
       <meta
         name="description"
         content="Convierte texto a Base64 y viceversa. Codifica, decodifica y copia fácilmente."

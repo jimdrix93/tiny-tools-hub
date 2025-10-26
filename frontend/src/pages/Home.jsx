@@ -8,12 +8,12 @@ export default function Home() {
 
   return (
     <>
-      <title>Tiny Tools Hub — Utilidades Online</title>
+      <title>Toolsy — Utilidades Online</title>
       <meta name="description" content="Colección de pequeñas utilidades online para developers y público general." />
       <link rel="canonical" href="https://tudominio.com/" />
 
       <div className="space-y-6">
-        <h1 className="text-2xl font-semibold">Tiny Tools Hub</h1>
+        <h1 className="text-2xl font-semibold">Toolsy</h1>
         <p className="text-neutral-700">Herramientas online rápidas y sencillas para el día a día.</p>
 
         <div className="grid gap-4 sm:grid-cols-2">

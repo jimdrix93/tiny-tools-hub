@@ -3,10 +3,9 @@ import { Link, Outlet } from "react-router-dom";
 export default function Layout() {
   return (
     <div className="min-h-screen flex flex-col">
-      {/* HEADER SIEMPRE ARRIBA */}
       <header className="sticky top-0 z-50 border-b bg-white">
         <div className="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between">
-          <Link to="/" className="font-bold text-lg text-neutral-900">Tiny Tools Hub</Link>
+          <Link to="/" className="font-bold text-lg text-neutral-900">Toolsy</Link>
           <nav className="text-sm space-x-4 text-blue-600">
             <Link to="/json-formatter" className="hover:underline">JSON</Link>
             <Link to="/base64" className="hover:underline">Base64</Link>
@@ -15,15 +14,14 @@ export default function Layout() {
         </div>
       </header>
 
-      {/* CONTENIDO. IMPORTANTE: crear un stacking context debajo */}
       <main className="relative z-0 mx-auto w-full max-w-5xl px-4 py-6">
         <Outlet />
       </main>
 
       <footer className="border-t bg-white">
         <div className="mx-auto max-w-5xl px-4 py-4 text-sm flex justify-between text-neutral-600">
-          <p>© {new Date().getFullYear()} Tiny Tools Hub</p>
-          <a href="https://github.com/tu-usuario/tiny-tools-hub" target="_blank" className="underline hover:text-neutral-800">
+          <p>© {new Date().getFullYear()} Toolsy</p>
+          <a href="https://github.com/jimdrix93/toolsy" target="_blank" className="underline hover:text-neutral-800">
             GitHub
           </a>
         </div>
