@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tiny-tools-hub-blue.vercel.app/sitemap.xml
+Sitemap: https://toolsykit.vercel.app/sitemap.xml

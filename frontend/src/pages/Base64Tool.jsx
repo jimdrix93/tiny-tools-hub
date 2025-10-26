@@ -49,7 +49,6 @@ export default function Base64Tool() {
           </p>
         </div>
 
-        {/* Selector de modo */}
         <div className="flex flex-wrap items-center gap-3">
           <label className="flex items-center gap-2 text-sm">
             <input
@@ -85,7 +84,6 @@ export default function Base64Tool() {
           </div>
         </div>
 
-        {/* Entrada */}
         <div className="space-y-2">
           <label htmlFor="input" className="text-sm font-medium">
             Entrada
@@ -99,7 +97,6 @@ export default function Base64Tool() {
           />
         </div>
 
-        {/* Resultado */}
         <div className="space-y-2">
           <label htmlFor="output" className="text-sm font-medium">
             Resultado

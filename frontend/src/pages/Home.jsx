@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <title>Toolsy — Utilidades Online</title>
       <meta name="description" content="Colección de pequeñas utilidades online para developers y público general." />
-      <link rel="canonical" href="https://tudominio.com/" />
+      <link rel="canonical" href="https://toolsykit.vercel.app/" />
 
       <div className="space-y-6">
         <h1 className="text-2xl font-semibold">Toolsy</h1>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://tiny-tools-hub-blue.vercel.app/</loc></url>
-  <url><loc>https://tiny-tools-hub-blue.vercel.app/json-formatter</loc></url>
-  <url><loc>https://tiny-tools-hub-blue.vercel.app/base64</loc></url>
-  <url><loc>https://tiny-tools-hub-blue.vercel.app/about</loc></url>
+  <url><loc>https://toolsykit.vercel.app/</loc></url>
+  <url><loc>https://toolsykit.vercel.app/json-formatter</loc></url>
+  <url><loc>https://toolsykit.vercel.app/base64</loc></url>
+  <url><loc>https://toolsykit.vercel.app/about</loc></url>
 </urlset>
