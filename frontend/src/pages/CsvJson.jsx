@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Papa from "papaparse";
+import SEO from "../components/SEO";
 
 export default function CsvJson() {
   const [input, setInput] = useState("");
@@ -66,9 +67,11 @@ export default function CsvJson() {
 
   return (
     <>
-      <title>CSV ↔ JSON — Toolsy</title>
-      <meta name="description" content="Convierte CSV a JSON y JSON a CSV. Controla el separador, cabeceras y formato." />
-      <link rel="canonical" href="https://toolsykit.vercel.app/csv-json" />
+      <SEO
+        title="CSV ↔ JSON"
+        description="Convierte CSV a JSON y JSON a CSV. Controla separador, cabeceras y formato."
+        path="/csv-json"
+      />
 
       <div className="space-y-6">
         <div className="space-y-1">

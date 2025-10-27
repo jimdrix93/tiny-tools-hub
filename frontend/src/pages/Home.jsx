@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 
 export default function Home() {
   const tools = [
@@ -9,10 +10,11 @@ export default function Home() {
 
   return (
     <>
-      <title>Toolsy — Online Utilities</title>
-      <meta name="description" content="Small, fast, privacy-friendly online utilities for developers and everyone." />
-      <link rel="canonical" href="https://toolsykit.vercel.app/" />
-
+      <SEO
+        title="Online Utilities"
+        description="Small, fast, privacy-friendly online utilities for developers and everyone."
+        path="/"
+      />
       <div className="space-y-6">
         <h1 className="text-3xl font-bold text-brand">Toolsy</h1>
         <p className="muted">Herramientas online rápidas y sencillas para el día a día.</p>

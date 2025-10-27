@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SEO from "../components/SEO";
 
 export default function Base64Tool() {
   const [input, setInput] = useState("");
@@ -35,13 +36,11 @@ export default function Base64Tool() {
 
   return (
     <>
-      <title>Base64 Encode / Decode — Toolsy</title>
-      <meta
-        name="description"
-        content="Convierte texto a Base64 y viceversa. Codifica, decodifica y copia fácilmente."
+      <SEO
+        title="Base64 Encode / Decode"
+        description="Convierte texto a Base64 y viceversa. UTF-8 friendly. Todo en tu navegador."
+        path="/base64"
       />
-      <link rel="canonical" href="https://toolsykit.vercel.app/base64" />
-
       <div className="space-y-4">
         <div className="space-y-1">
           <h1 className="text-3xl font-bold text-brand">Base64 Encode / Decode</h1>

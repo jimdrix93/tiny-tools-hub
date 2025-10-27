@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import SEO from "../components/SEO";
 
 function sortObjectKeysDeep(value) {
   if (Array.isArray(value)) return value.map(sortObjectKeysDeep);
@@ -100,13 +101,11 @@ export default function JsonFormatter() {
 
   return (
     <>
-      <title>JSON Formatter — Toolsy</title>
-      <meta
-        name="description"
-        content="Formatea, valida y minifica JSON al instante. Ordena claves, copia y descarga el resultado."
+      <SEO
+        title="JSON Formatter"
+        description="Formatea, valida y minifica JSON al instante. Ordena claves, copia y descarga el resultado."
+        path="/json-formatter"
       />
-      <link rel="canonical" href="https://toolsykit.vercel.app/json-formatter" />
-
       <div className="relative z-0 space-y-6">
         <div className="space-y-1">
           <h1 className="text-3xl font-bold text-brand">JSON Formatter</h1>
