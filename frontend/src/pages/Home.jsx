@@ -4,6 +4,7 @@ export default function Home() {
   const tools = [
     { path: "/json-formatter", title: "JSON Formatter", desc: "Formatea y valida JSON al instante." },
     { path: "/base64", title: "Base64 Encode/Decode", desc: "Codifica y decodifica texto en Base64." },
+    { path: "/csv-json", title: "CSV ↔ JSON", desc: "Convierte CSV a JSON y JSON a CSV con un clic." },
   ];
 
   return (

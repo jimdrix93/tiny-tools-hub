@@ -26,6 +26,7 @@ export default function Layout() {
           <nav className="flex items-center gap-3">
             <NavItem to="/json-formatter">JSON</NavItem>
             <NavItem to="/base64">Base64</NavItem>
+            <NavItem to="/csv-json">CSV↔JSON</NavItem>
             <NavItem to="/about">About</NavItem>
           </nav>
         </div>
