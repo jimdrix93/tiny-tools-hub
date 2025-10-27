@@ -109,7 +109,7 @@ export default function JsonFormatter() {
 
       <div className="relative z-0 space-y-6">
         <div className="space-y-1">
-          <h1 className="text-3xl font-bold">JSON Formatter</h1>
+          <h1 className="text-3xl font-bold text-brand">JSON Formatter</h1>
           <p className="muted">
             Pega tu JSON y formatealo o minifícalo. Atajos:{" "}
             <kbd>Ctrl/⌘ + Enter</kbd> (Formatear), <kbd>Ctrl/⌘ + B</kbd> (Minificar).

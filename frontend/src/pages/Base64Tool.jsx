@@ -40,10 +40,11 @@ export default function Base64Tool() {
         name="description"
         content="Convierte texto a Base64 y viceversa. Codifica, decodifica y copia fácilmente."
       />
+      <link rel="canonical" href="https://toolsykit.vercel.app/base64" />
 
       <div className="space-y-4">
         <div className="space-y-1">
-          <h1 className="text-xl font-semibold">Base64 Encode / Decode</h1>
+          <h1 className="text-3xl font-bold text-brand">Base64 Encode / Decode</h1>
           <p className="text-sm text-neutral-600">
             Convierte texto a Base64 y viceversa directamente en tu navegador.
           </p>
@@ -74,11 +75,11 @@ export default function Base64Tool() {
           <div className="flex flex-wrap gap-2">
             <button
               onClick={handleConvert}
-              className="rounded bg-black px-3 py-2 text-sm text-white"
+              className="btn-primary"
             >
               Convertir
             </button>
-            <button onClick={clearAll} className="rounded border px-3 py-2 text-sm">
+            <button onClick={clearAll} className="btn-outline">
               Limpiar
             </button>
           </div>
@@ -112,7 +113,7 @@ export default function Base64Tool() {
             <button
               onClick={copyOutput}
               disabled={!output}
-              className="rounded border px-3 py-2 text-sm disabled:opacity-50"
+              className="btn-outline"
             >
               Copiar resultado
             </button>

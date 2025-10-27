@@ -5,7 +5,7 @@ const NavItem = ({ to, children }) => (
   <NavLink
     to={to}
     className={({ isActive }) =>
-      `px-2 py-1 text-sm transition ${
+      `px-2 py-1 text-lg transition ${
         isActive ? "text-brand font-semibold" : "text-neutral-700 hover:text-brand"
       }`
     }
@@ -20,8 +20,8 @@ export default function Layout() {
       <header className="sticky top-0 z-50 border-b bg-white/90 backdrop-blur">
         <div className="container-site flex items-center justify-between py-3">
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Toolsy logo" className="h-6 w-6" />
-            <span className="text-lg font-bold text-neutral-900">Toolsy</span>
+            <img src={logo} alt="Toolsy logo" className="h-10 w-10" />
+            <span className="text-2xl font-bold text-brand">Toolsy</span>
           </Link>
           <nav className="flex items-center gap-3">
             <NavItem to="/json-formatter">JSON</NavItem>
@@ -37,8 +37,8 @@ export default function Layout() {
 
       <footer className="border-t bg-white">
         <div className="container-site flex items-center justify-between py-4 text-sm text-neutral-600">
-          <p>© {new Date().getFullYear()} Toolsy</p>
-          <a href="https://github.com/tu-usuario/toolsy" className="hover:text-neutral-800" target="_blank">GitHub</a>
+          <p className="text-brand">© {new Date().getFullYear()} Toolsy</p>
+          <a href="https://github.com/jimdrix93/toolsy" className="hover:text-neutral-800 text-brand" target="_blank">GitHub</a>
         </div>
       </footer>
     </div>

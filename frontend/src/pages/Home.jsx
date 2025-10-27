@@ -13,7 +13,7 @@ export default function Home() {
       <link rel="canonical" href="https://toolsykit.vercel.app/" />
 
       <div className="space-y-6">
-        <h1 className="text-3xl font-bold">Toolsy</h1>
+        <h1 className="text-3xl font-bold text-brand">Toolsy</h1>
         <p className="muted">Herramientas online rápidas y sencillas para el día a día.</p>
 
         <div className="grid gap-4 md:grid-cols-2">
