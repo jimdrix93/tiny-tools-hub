@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SEO from "../components/SEO";
+import { track } from "../lib/analytics";
 
 export default function Base64Tool() {
   const [input, setInput] = useState("");
@@ -8,6 +9,7 @@ export default function Base64Tool() {
   const [error, setError] = useState("");
 
   const handleConvert = () => {
+    track("base64_convert", { mode });
     try {
       let result = "";
       if (mode === "encode") {

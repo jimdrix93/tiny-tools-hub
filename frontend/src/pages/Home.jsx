@@ -14,6 +14,17 @@ export default function Home() {
         title="Online Utilities"
         description="Small, fast, privacy-friendly online utilities for developers and everyone."
         path="/"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Toolsy",
+          "url": "https://toolsykit.vercel.app",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://toolsykit.vercel.app/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }}
       />
       <div className="space-y-6">
         <h1 className="text-3xl font-bold text-brand-auto">Toolsy</h1>

@@ -6,6 +6,7 @@ import JsonFormatter from "./pages/JsonFormatter";
 import Base64Tool from "./pages/Base64Tool";
 import About from "./pages/About";
 import CsvJson from "./pages/CsvJson";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
@@ -17,7 +18,7 @@ export default function App() {
           <Route path="base64" element={<Base64Tool />} />
           <Route path="csv-json" element={<CsvJson />} />
           <Route path="about" element={<About />} />
-          <Route path="*" element={<div className="p-6">Not found</div>} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

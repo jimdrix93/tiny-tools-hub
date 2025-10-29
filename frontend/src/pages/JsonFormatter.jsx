@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import SEO from "../components/SEO";
+import { track } from "../lib/analytics";
 
 function sortObjectKeysDeep(value) {
   if (Array.isArray(value)) return value.map(sortObjectKeysDeep);
@@ -25,6 +26,7 @@ export default function JsonFormatter() {
   const outputRef = useRef(null);
 
   const formatJson = () => {
+    track("json_format", { sortKeys, indent });
     setError("");
     try {
       const obj = JSON.parse(input);
@@ -38,6 +40,7 @@ export default function JsonFormatter() {
   };
 
   const minifyJson = () => {
+    track("json_minify", {});
     setError("");
     try {
       const obj = JSON.parse(input);

@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://toolsykit.vercel.app/sitemap.xml

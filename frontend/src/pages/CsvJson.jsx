@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Papa from "papaparse";
 import SEO from "../components/SEO";
+import { track } from "../lib/analytics";
 
 export default function CsvJson() {
   const [input, setInput] = useState("");
@@ -29,6 +30,7 @@ export default function CsvJson() {
   };
 
   const csvToJson = () => {
+    track("csvjson_convert", { mode, delimiter, auto, hasHeader });
     setError("");
     try {
       const res = Papa.parse(input, {
@@ -51,6 +53,7 @@ export default function CsvJson() {
   };
 
   const jsonToCsv = () => {
+    track("jsoncsv_convert", { mode, delimiter, auto, hasHeader });
     setError("");
     try {
       const data = JSON.parse(input);
