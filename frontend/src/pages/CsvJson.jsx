@@ -75,7 +75,7 @@ export default function CsvJson() {
 
       <div className="space-y-6">
         <div className="space-y-1">
-          <h1 className="text-3xl font-bold text-brand">CSV ↔ JSON</h1>
+          <h1 className="text-3xl font-bold text-brand-auto">CSV ↔ JSON</h1>
           <p className="muted">Convierte entre CSV y JSON directamente en tu navegador.</p>
         </div>
 
@@ -146,7 +146,7 @@ export default function CsvJson() {
             value={output}
             readOnly
             placeholder="Aquí verás el resultado…"
-            className="textarea bg-neutral-50"
+            className="textarea"
           />
           <div className="flex flex-wrap gap-2">
             <button onClick={copyOutput} className={`btn-outline ${!output ? "btn-disabled" : ""}`} disabled={!output}>
@@ -163,7 +163,7 @@ export default function CsvJson() {
           </div>
         </div>
 
-        <aside className="card p-3 text-sm text-neutral-700">
+        <aside className="card p-3 text-sm muted">
           <p className="mb-1 font-medium">Consejos:</p>
           <ul className="list-disc pl-5 space-y-1">
             <li>Si tu CSV no tiene cabeceras, desmarca “CSV con cabeceras”.</li>

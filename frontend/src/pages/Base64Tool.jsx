@@ -43,8 +43,8 @@ export default function Base64Tool() {
       />
       <div className="space-y-4">
         <div className="space-y-1">
-          <h1 className="text-3xl font-bold text-brand">Base64 Encode / Decode</h1>
-          <p className="text-sm text-neutral-600">
+          <h1 className="text-3xl font-bold text-brand-auto">Base64 Encode / Decode</h1>
+          <p className="muted">
             Convierte texto a Base64 y viceversa directamente en tu navegador.
           </p>
         </div>
@@ -93,7 +93,7 @@ export default function Base64Tool() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder={mode === "encode" ? "Texto plano..." : "Cadena Base64..."}
-            className="h-40 w-full rounded-lg border p-3 font-mono text-sm outline-none focus:ring-2 focus:ring-neutral-300"
+            className="textarea focus:ring-brand/30"
           />
         </div>
 
@@ -106,13 +106,13 @@ export default function Base64Tool() {
             value={output}
             readOnly
             placeholder="Aquí verás el resultado..."
-            className="h-40 w-full rounded-lg border bg-neutral-50 p-3 font-mono text-sm"
+            className="textarea focus:ring-brand/30"
           />
           <div className="flex flex-wrap gap-2">
             <button
               onClick={copyOutput}
+              className={`btn-outline ${!output ? "btn-disabled" : ""}`}
               disabled={!output}
-              className="btn-outline"
             >
               Copiar resultado
             </button>
@@ -125,7 +125,7 @@ export default function Base64Tool() {
           </div>
         )}
 
-        <aside className="rounded-lg border bg-white p-3 text-sm text-neutral-700">
+        <aside className="card p-3 text-sm muted">
           <p className="mb-1 font-medium">Consejos:</p>
           <ul className="list-disc pl-5 space-y-1">
             <li>Ideal para enviar datos binarios como texto.</li>

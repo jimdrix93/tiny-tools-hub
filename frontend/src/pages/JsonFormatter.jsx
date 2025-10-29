@@ -108,7 +108,7 @@ export default function JsonFormatter() {
       />
       <div className="relative z-0 space-y-6">
         <div className="space-y-1">
-          <h1 className="text-3xl font-bold text-brand">JSON Formatter</h1>
+          <h1 className="text-3xl font-bold text-brand-auto">JSON Formatter</h1>
           <p className="muted">
             Pega tu JSON y formatealo o minifícalo. Atajos:{" "}
             <kbd>Ctrl/⌘ + Enter</kbd> (Formatear), <kbd>Ctrl/⌘ + B</kbd> (Minificar).
@@ -197,7 +197,7 @@ export default function JsonFormatter() {
             value={output}
             readOnly
             placeholder="Aquí verás el resultado…"
-            className="textarea bg-neutral-50"
+            className="textarea focus:ring-brand/30"
           />
           <div className="flex flex-wrap gap-2">
             <button
@@ -217,7 +217,7 @@ export default function JsonFormatter() {
           </div>
         </div>
 
-        <aside className="card p-3 text-sm text-neutral-700">
+        <aside className="card p-3 text-sm muted">
           <p className="mb-1 font-medium">Consejos:</p>
           <ul className="list-disc pl-5 space-y-1">
             <li>
