@@ -1,6 +1,7 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
-import logo from "../assets/logo.png";
+import logoLight from "../assets/logo.png";
+import logoDark from "../assets/logo-dark.png";
 
 const NavItem = ({ to, children }) => (
   <NavLink
@@ -47,12 +48,12 @@ export default function Layout() {
         <div className="container-site flex items-center justify-between py-3">
           <Link to="/" className="flex items-center gap-2">
             <img
-              src={logo}
+              src={logoLight}
               alt="Toolsy logo"
               className="h-10 w-10 block dark:hidden"
             />
             <img
-              src="/src/assets/logo-dark.png"
+              src={logoDark}
               alt="Toolsy logo dark"
               className="h-10 w-10 hidden dark:block"
             />
