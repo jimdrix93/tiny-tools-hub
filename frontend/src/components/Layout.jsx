@@ -7,7 +7,7 @@ const NavItem = ({ to, children }) => (
   <NavLink
     to={to}
     className={({ isActive }) =>
-      `px-2 py-1 text-lg transition ${
+      `px-2 py-1 text-lg transition-colors focus-visible:outline-none focus-visible:underline focus-visible:underline-offset-4 ${
         isActive
           ? "text-brand-auto font-semibold underline underline-offset-4"
           : "text-neutral-700 hover:text-brand-auto dark:text-neutral-300 dark:hover:text-brand-auto"

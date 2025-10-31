@@ -1,8 +1,10 @@
 import { useState } from "react";
 import SEO from "../components/SEO";
 import { track } from "../lib/analytics";
+import { useToast } from "../components/Toast";
 
 export default function Base64Tool() {
+  const { show } = useToast();
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [mode, setMode] = useState("encode");
@@ -19,21 +21,25 @@ export default function Base64Tool() {
       }
       setOutput(result);
       setError("");
+      show(`Converted (${mode})`);
     } catch (e) {
       setError("Entrada inválida o formato no compatible con Base64.");
       setOutput("");
+      show("Invalid input", { variant: "error" });
     }
   };
 
   const copyOutput = async () => {
     if (!output) return;
     await navigator.clipboard.writeText(output);
+    show("Copied to clipboard");
   };
 
   const clearAll = () => {
     setInput("");
     setOutput("");
     setError("");
+    show("Cleared");
   };
 
   return (

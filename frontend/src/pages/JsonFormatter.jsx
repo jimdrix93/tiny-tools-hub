@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import SEO from "../components/SEO";
 import { track } from "../lib/analytics";
+import { useToast } from "../components/Toast";
 
 function sortObjectKeysDeep(value) {
   if (Array.isArray(value)) return value.map(sortObjectKeysDeep);
@@ -16,6 +17,7 @@ function sortObjectKeysDeep(value) {
 }
 
 export default function JsonFormatter() {
+  const { show } = useToast();
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [error, setError] = useState("");
@@ -33,9 +35,11 @@ export default function JsonFormatter() {
       const processed = sortKeys ? sortObjectKeysDeep(obj) : obj;
       const pretty = JSON.stringify(processed, null, indent);
       setOutput(pretty);
+      show("JSON formatted");
     } catch (e) {
       setOutput("");
       setError(e instanceof Error ? e.message : "JSON inválido.");
+      show("Invalid JSON", { variant: "error" });
     }
   };
 
@@ -47,23 +51,27 @@ export default function JsonFormatter() {
       const processed = sortKeys ? sortObjectKeysDeep(obj) : obj;
       const minified = JSON.stringify(processed);
       setOutput(minified);
+      show("JSON minified");
     } catch (e) {
       setOutput("");
       setError(e instanceof Error ? e.message : "JSON inválido.");
+      show("Invalid JSON", { variant: "error" });
     }
   };
 
   const copyOutput = async () => {
     if (!output) return;
     await navigator.clipboard.writeText(output);
+    show("Copied to clipboard");
   };
 
   const pasteToInput = async () => {
     try {
       const text = await navigator.clipboard.readText();
       if (text) setInput(text);
+      if (text) show("Pasted from clipboard", { variant: "info" });
     } catch {
-      // Ignorar errores de permisos
+      show("Clipboard not available", { variant: "error" });
     }
   };
 
@@ -76,12 +84,14 @@ export default function JsonFormatter() {
     a.download = "formatted.json";
     a.click();
     URL.revokeObjectURL(url);
+    show("Download started");
   };
 
   const clearAll = () => {
     setInput("");
     setOutput("");
     setError("");
+    show("Cleared");
   };
 
   // Atajos de teclado
